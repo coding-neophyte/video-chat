@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 7890;
 io.on('connection', (socket) => {
   socket.on('join-room', (roomId, userId) => {
     socket.join(roomId);
-    socket.to(roomId).broadcast.emit('User Connected', userId);
+    socket.to(roomId).broadcast.emit('user-connected', userId);
 
     socket.on('disconnect', () => {
-      socket.to(roomId).broadcast.emit('User Disconnected', userId);
+      socket.to(roomId).broadcast.emit('user-disconnected', userId);
     });
   });
 });
