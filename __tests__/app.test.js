@@ -11,4 +11,7 @@ describe('alchemy-app routes', () => {
   afterAll(() => {
     pool.end();
   });
+  it('fake test', () => {
+
+  });
 });
